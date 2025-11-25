@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNALTERED – 90-Day GLP-1 Transformation Upgrade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-light: #FAF9F6;
+      --bg-warm: #F6EBD7;
+      --accent: #EF4684;
+      --accent-soft: #ffe4f0;
+      --text-main: #111111;
+      --text-muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --border-soft: #e5e3dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--bg-light), var(--bg-warm));
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 24px;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 160px;
+      height: 40px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-mini-icons {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .mini-icon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .mini-icon-pill span {
+      font-size: 12px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(239,70,132,0.2);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.08s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(239,70,132,0.28);
+      background-color: #e5397a;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 14px;
+    }
+
+    .btn-secondary-link {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .btn-secondary-link:hover {
+      color: #444;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .section--no-card {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-kicker .hero-icon {
+      font-size: 16px;
+    }
+
+    .hero-text h1 {
+      font-size: 28px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 14px;
+    }
+
+    .hero-highlight {
+      background: rgba(239,70,132,0.06);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight .icon-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .timeline-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .timeline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px dashed var(--border-soft);
+    }
+
+    .timeline-pill span.icon {
+      font-size: 13px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 220px;
+      border-radius: 24px;
+      border: 2px dashed var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px;
+      background:#fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-pill-row {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .image-pill {
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      background-color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill span.icon {
+      font-size: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      padding: 14px;
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .checklist li {
+      margin-bottom: 6px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge span.icon {
+      font-size: 13px;
+    }
+
+    .cta-row {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cta-subcopy {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .comparison-card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    .comparison-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .comparison-label span.icon {
+      font-size: 12px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .price-main {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .price-strike {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .price-note {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .timeline-step {
+      border-radius: 12px;
+      border: 1px dashed var(--border-soft);
+      padding: 8px 10px;
+      background: #fff;
+    }
+
+    .timeline-step-title {
+      font-weight: 600;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .timeline-step-title span.icon {
+      font-size: 14px;
+    }
+
+    .guarantee-strip {
+      border-radius: 14px;
+      border: 1px solid rgba(239,70,132,0.24);
+      background: linear-gradient(135deg, #ffeef7, #ffffff);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .guarantee-strip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.3);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-placeholder">UNALTERED LOGO</div>
+      <div class="header-right">
+        <div class="header-mini-icons">
+          <div class="mini-icon-pill">
+            <span>⏱️</span><span>Limited New Year 2026 Upgrade</span>
+          </div>
+          <div class="mini-icon-pill">
+            <span>🛡️</span><span>Backed by our care promise</span>
+          </div>
+        </div>
+        <a href="page3-upsell2.html" class="btn-primary">
+          <span>Yes, Extend My Results</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / UPSALE FRAME -->
+      <div class="section">
+        <div class="hero">
+          <div class="hero-text">
+            <div class="hero-kicker">
+              <span class="hero-icon">⏳</span>
+              <span>Wait – before you finish your 60-day bundle…</span>
+            </div>
+
+            <h1>Most Moms See Their Biggest Changes Between Days 60–90</h1>
+
+            <div class="hero-highlight">
+              <div class="icon-circle">📈</div>
+              <div>
+                Upgrade to the <strong>90-Day GLP-1 Transformation Kit</strong> and keep your appetite & habits on track
+                through the rest of your New Year 2026 reset.
+              </div>
+            </div>
+
+            <p>
+              You’ve already taken the hardest step by starting. This upgrade simply extends your support so you’re not
+              restarting from scratch when your initial bottles run out.
+            </p>
+
+            <div class="timeline-row">
+              <div class="timeline-pill">
+                <span class="icon">📆</span><span>Days 1–60: You’re already covered</span>
+              </div>
+              <div class="timeline-pill">
+                <span class="icon">✅</span><span>Days 61–90: This upgrade keeps your momentum</span>
+              </div>
+            </div>
+
+            <div class="pill-row">
+              <div class="pill"><span class="icon">👩‍👧</span><span>Designed for busy moms</span></div>
+              <div class="pill"><span class="icon">🍽️</span><span>More time with supported appetite</span></div>
+              <div class="pill"><span class="icon">📱</span><span>Synced with the UNALTERED App</span></div>
+            </div>
+
+            <div class="cta-row">
+              <a href="page3-upsell2.html" class="btn-primary">
+                <span>Yes, Extend My Results to 90 Days</span>
+                <span class="arrow">→</span>
+              </a>
+              <button class="btn-secondary-link" onclick="location.href='page2a-downsell1a.html'">
+                No thanks, I’ll stick with 60 days
+              </button>
+              <div class="cta-subcopy">
+                💡 Recommended for women who want enough support to see changes beyond just the “first month.”
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder">
+            <div class="image-pill-row">
+              <div class="image-pill">✨ 90-Day Kit</div>
+              <div class="image-pill">🗓️ New Year 2026 Upgrade</div>
+            </div>
+            IMAGE: 3× GLP-1 SUPPORT BOTTLES<br><br>
+            <div style="font-size: 11px; text-transform:none;">
+              (Replace with your 3-bottle GLP-1 Support render or kit graphic)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT’S IN THE 90-DAY UPGRADE -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🧺</span>
+          What’s Included in Your 90-Day GLP-1 Transformation Kit
+        </h2>
+        <p class="section-subtitle">
+          This upgrade adds an extended runway so your body and routine have time to adjust, instead of hitting “empty”
+          right when you’re starting to feel your new habits.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">💊</div>
+              <div class="card-title">Additional GLP-1 Support Supply</div>
+            </div>
+            <ul class="checklist">
+              <li>Extra bottles of UNALTERED GLP-1 Support to extend your total coverage to ~90 days.</li>
+              <li>More time with help supporting appetite-related routines as you move through 2026.</li>
+              <li>Reduces the urge to “take a break” right when you’re starting to see traction.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📆</div>
+              <div class="card-title">Extended App-Guided Habit Support</div>
+            </div>
+            <ul class="checklist">
+              <li>Keep your meal logging, reminders, and progress tracking going through Days 61–90.</li>
+              <li>Stay plugged into updated checklists and suggested micro-habits.</li>
+              <li>Use the extra month to cement routines that feel natural, not forced.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARISON / VALUE FRAMING -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">⚖️</span>
+          60 Days vs. 90 Days: What’s the Difference?
+        </h2>
+        <p class="section-subtitle">
+          Both options are good. The 90-day kit is simply built for women who don’t want to risk losing momentum mid-reset.
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="comparison-label">
+              <span class="icon">⏳</span><span>Standard 60-Day Bundle (What You Already Chose)</span>
+            </div>
+            <div class="price-row">
+              <span class="price-main">✔</span>
+              <span class="price-note">Solid short-term jump-start</span>
+            </div>
+            <ul class="checklist">
+              <li>Great way to get started and experience the routine.</li>
+              <li>Covers roughly the first 2 months of your reset.</li>
+              <li>Some women run out right when their habits are starting to click.</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card" style="border-color: var(--accent); box-shadow: 0 8px 18px rgba(239,70,132,0.12); position: relative;">
+            <div style="position:absolute; top:8px; right:10px; font-size:10px; padding:3px 7px; border-radius:999px; background:var(--accent); color:#fff;">
+              Recommended
+            </div>
+            <div class="comparison-label">
+              <span class="icon">🚀</span><span>90-Day GLP-1 Transformation Kit (This Upgrade)</span>
+            </div>
+            <div class="price-row">
+              <span class="price-main">⭐ Best Long-Term Value</span>
+            </div>
+            <ul class="checklist">
+              <li>Extends your support through Days 61–90 of your 2026 routine.</li>
+              <li>More time for your appetite, energy, and routines to adapt.</li>
+              <li>Helps you stay consistent through the hardest part — staying on track.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a href="page3-upsell2.html" class="btn-primary">
+            <span>Upgrade Me to the 90-Day Kit</span>
+            <span class="arrow">→</span>
+          </a>
+          <button class="btn-secondary-link" onclick="location.href='page2a-downsell1a.html'">
+            No thanks, I’ll keep just the 60 days
+          </button>
+        </div>
+      </div>
+
+      <!-- SIMPLE TIMELINE / EXPECTATION SETTING -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">📆</span>
+          A Simple 90-Day Roadmap for Your 2026 Reset
+        </h2>
+        <p class="section-subtitle">
+          Everyone’s experience is different, but this is the general rhythm many moms aim for while using their bundle
+          and the app as part of a broader lifestyle routine.
+        </p>
+
+        <div class="timeline-steps">
+          <div class="timeline-step">
+            <div class="timeline-step-title">
+              <span class="icon">🌱</span><span>Days 1–30: Getting into rhythm</span>
+            </div>
+            <div>
+              You get comfortable taking your supplements, using the app, and logging meals without overthinking it.
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-step-title">
+              <span class="icon">🔁</span><span>Days 31–60: Routine feels more natural</span>
+            </div>
+            <div>
+              The steps start to feel less like a “project” and more like part of your daily life. This is where most women
+              start seeing meaningful routine changes.
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-step-title">
+              <span class="icon">🧱</span><span>Days 61–90: Reinforce & protect your progress</span>
+            </div>
+            <div>
+              The 90-day kit helps you maintain that rhythm instead of stopping the moment your initial supply runs out.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUARANTEE REMINDER -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🛡️</span>
+          Still Protected by Our “Make It Right” Promise
+        </h2>
+        <div class="guarantee-strip">
+          <div class="guarantee-strip-badge">
+            <span>🔒</span>
+            <span>Covered by our care-first support</span>
+          </div>
+          <div>
+            The same care philosophy that applies to your main bundle also applies here. If you’re not feeling supported
+            by the experience, contact us — we’ll do everything we reasonably can to make it right under our policies.
+          </div>
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div class="section">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <h2 class="section-title">
+              <span class="section-title-icon">🎯</span>
+              Give Your 2026 Reset a Full 90-Day Runway
+            </h2>
+            <p class="section-subtitle">
+              If you already know you want to stay consistent beyond the first couple of months, this is the moment to
+              extend your support — before your initial GLP-1 bottles run out.
+            </p>
+          </div>
+          <div>
+            <div class="cta-row" style="justify-content: flex-start;">
+              <a href="page3-upsell2.html" class="btn-primary">
+                <span>Yes, Upgrade Me to 90 Days</span>
+                <span class="arrow">→</span>
+              </a>
+              <button class="btn-secondary-link" onclick="location.href='page2a-downsell1a.html'">
+                No thanks, I’ll stay at 60 days
+              </button>
+              <div class="cta-subcopy">
+                ⏳ This upgrade is only shown once with your New Year 2026 bundle.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>© 2026 UNALTERED LLC. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

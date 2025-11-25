@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNALTERED – Add 1 Extra Month of GLP-1 Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-light: #FAF9F6;
+      --bg-warm: #F6EBD7;
+      --accent: #EF4684;
+      --accent-soft: #ffe4f0;
+      --text-main: #111111;
+      --text-muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --border-soft: #e5e3dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--bg-light), var(--bg-warm));
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 24px;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 160px;
+      height: 40px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-mini-icons {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .mini-icon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .mini-icon-pill span {
+      font-size: 12px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(239,70,132,0.2);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.08s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(239,70,132,0.28);
+      background-color: #e5397a;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 14px;
+    }
+
+    .btn-secondary-link {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .btn-secondary-link:hover {
+      color: #444;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-kicker .hero-icon {
+      font-size: 16px;
+    }
+
+    .hero-text h1 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 14px;
+    }
+
+    .hero-highlight {
+      background: rgba(239,70,132,0.06);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight .icon-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      background-color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill span.icon {
+      font-size: 14px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 220px;
+      border-radius: 24px;
+      border: 2px dashed var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px;
+      background:#fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-pill-row {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .image-pill {
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      padding: 14px;
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .checklist li {
+      margin-bottom: 6px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .cta-row {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cta-subcopy {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge span.icon {
+      font-size: 13px;
+    }
+
+    .guarantee-strip {
+      border-radius: 14px;
+      border: 1px solid rgba(239,70,132,0.24);
+      background: linear-gradient(135deg, #ffeef7, #ffffff);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .guarantee-strip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.3);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-soft);
+      padding: 10px 0;
+      font-size: 13px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .faq-q span.icon {
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-placeholder">UNALTERED LOGO</div>
+      <div class="header-right">
+        <div class="header-mini-icons">
+          <div class="mini-icon-pill">
+            <span>➕</span><span>Simple 30-day add-on</span>
+          </div>
+          <div class="mini-icon-pill">
+            <span>🔒</span><span>Secure checkout</span>
+          </div>
+        </div>
+        <a href="page3-upsell2.html" class="btn-primary">
+          <span>Add 1 Extra Bottle</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / 1-BOTTLE ADD-ON -->
+      <div class="section">
+        <div class="hero">
+          <div class="hero-text">
+            <div class="hero-kicker">
+              <span class="hero-icon">➕</span>
+              <span>Last chance to extend your runway — the simple way</span>
+            </div>
+
+            <h1>Not Ready for a Full 90-Day Kit? Add Just 1 Extra Month Instead.</h1>
+
+            <div class="hero-highlight">
+              <div class="icon-circle">💊</div>
+              <div>
+                Add <strong>1 additional bottle of UNALTERED GLP-1 Support</strong> to extend your support by
+                roughly <strong>30 more days</strong> — without committing to the full 90-day upgrade.
+              </div>
+            </div>
+
+            <p>
+              If the full 90-day kit or split payments felt like too much right now, this is the simplest path:
+              keep everything you already ordered and <strong>add just one more month</strong> of GLP-1 Support to
+              avoid running out right as your routine is starting to click.
+            </p>
+
+            <div class="pill-row">
+              <div class="pill"><span class="icon">🧺</span><span>Keep your current bundle</span></div>
+              <div class="pill"><span class="icon">➕</span><span>Add 1 extra bottle only</span></div>
+              <div class="pill"><span class="icon">📆</span><span>Approx. 30 more days of support</span></div>
+            </div>
+
+            <div class="cta-row">
+              <a href="page3-upsell2.html" class="btn-primary">
+                <span>Yes, Add 1 Extra Bottle</span>
+                <span class="arrow">→</span>
+              </a>
+              <button class="btn-secondary-link" onclick="location.href='page2c-downsell1c.html'">
+                No thanks, I’ll pass on the extra month
+              </button>
+              <div class="cta-subcopy">
+                💡 Ideal if you want a bit more time with support before deciding on anything long term.
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder">
+            <div class="image-pill-row">
+              <div class="image-pill">➕ 1 Bottle</div>
+              <div class="image-pill">📆 30-Day Add-On</div>
+            </div>
+            IMAGE: SINGLE GLP-1 SUPPORT BOTTLE<br><br>
+            <div style="font-size: 11px; text-transform:none;">
+              (Replace with a clean render of one GLP-1 Support bottle)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT THIS 1-BOTTLE ADD-ON DOES FOR YOU -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">📆</span>
+          What 1 Extra Month of GLP-1 Support Really Buys You
+        </h2>
+        <p class="section-subtitle">
+          This isn’t about “one more product.” It’s about buying yourself a little more time to keep going,
+          instead of abruptly stopping when your initial bottles are gone.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🧱</div>
+              <div class="card-title">More time to reinforce your routine</div>
+            </div>
+            <ul class="checklist">
+              <li>Gives your body and schedule extra time to adjust to your new habits.</li>
+              <li>Helps prevent the “I ran out, so I stopped altogether” pattern.</li>
+              <li>Lets you roll into the next month with a plan instead of starting from zero.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📱</div>
+              <div class="card-title">Keeps your app-guided rhythm going</div>
+            </div>
+            <ul class="checklist">
+              <li>Stay plugged into your meal logging and reminders instead of closing the app when the bottles are gone.</li>
+              <li>Get more entries in your progress dashboard, making your changes easier to see over time.</li>
+              <li>Use the extra month to test what works best for your real schedule.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIMPLE VALUE FRAMING -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">⚖️</span>
+          A Simple, Low-Commitment Way to Extend Support
+        </h2>
+        <p class="section-subtitle">
+          If you’re not ready for a bigger upgrade, this is the most straightforward option to stay covered just a little longer.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🧺</div>
+              <div class="card-title">What you already have</div>
+            </div>
+            <ul class="checklist">
+              <li>Your original GLP-1 Support + Slim Tighten Tone bundle.</li>
+              <li>Access to the UNALTERED App to help guide daily habits.</li>
+              <li>A strong start for your 2026 reset.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-color: var(--accent); box-shadow: 0 8px 18px rgba(239,70,132,0.12); position: relative;">
+            <div style="position:absolute; top:8px; right:10px; font-size:10px; padding:3px 7px; border-radius:999px; background:var(--accent); color:#fff;">
+              Simple Add-On
+            </div>
+            <div class="card-header">
+              <div class="card-icon">➕</div>
+              <div class="card-title">What this 1-bottle add-on gives you</div>
+            </div>
+            <ul class="checklist">
+              <li>Approximately 30 additional days of GLP-1 Support.</li>
+              <li>More breathing room to stay consistent into the next month.</li>
+              <li>A decision you make now so you don’t have to scramble later.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="badge-row">
+          <div class="badge"><span class="icon">🚫</span><span>No new subscription on this page</span></div>
+          <div class="badge"><span class="icon">👩‍👧</span><span>Made for real mom schedules</span></div>
+        </div>
+
+        <div class="cta-row">
+          <a href="page3-upsell2.html" class="btn-primary">
+            <span>Yes, Add 1 Extra Bottle</span>
+            <span class="arrow">→</span>
+          </a>
+          <button class="btn-secondary-link" onclick="location.href='page2c-downsell1c.html'">
+            No thanks, I’ll continue without the extra month
+          </button>
+        </div>
+      </div>
+
+      <!-- GUARANTEE / SUPPORT REMINDER -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🛡️</span>
+          You’re Still Backed by Our Care-First Support
+        </h2>
+        <div class="guarantee-strip">
+          <div class="guarantee-strip-badge">
+            <span>🔒</span>
+            <span>Same philosophy, same support</span>
+          </div>
+          <div>
+            Adding one more bottle doesn’t change our commitment to taking care of you. If you ever feel unsure about
+            your experience, reach out to our team and we’ll do everything we reasonably can to support you within our policies.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">❓</span>
+          Quick Questions About the 1-Bottle Add-On
+        </h2>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">🧺</span>
+            <span>Does this change my existing order?</span>
+          </div>
+          <div class="faq-a">
+            No. Your original bundle stays exactly the same. This simply adds one more bottle of GLP-1 Support to your order
+            so you have an extra month of coverage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">📆</span>
+            <span>How long does this extra bottle last?</span>
+          </div>
+          <div class="faq-a">
+            It’s designed as an additional ~30-day supply when taken as directed on the label, giving you more time to stay
+            in rhythm before deciding what you’d like to do next.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">💳</span>
+            <span>Is this a one-time add-on or a subscription?</span>
+          </div>
+          <div class="faq-a">
+            This is a one-time add-on for your current order. It does not enroll you into a recurring subscription on this page.
+          </div>
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div class="section">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <h2 class="section-title">
+              <span class="section-title-icon">🎯</span>
+              Want a Little Extra Support Without a Big Commitment?
+            </h2>
+            <p class="section-subtitle">
+              If you’re on the fence about larger upgrades, adding one extra bottle is the simplest way to keep your
+              momentum going into the next month of your 2026 reset.
+            </p>
+          </div>
+          <div>
+            <div class="cta-row" style="justify-content: flex-start;">
+              <a href="page3-upsell2.html" class="btn-primary">
+                <span>Yes, Add 1 Extra Bottle</span>
+                <span class="arrow">→</span>
+              </a>
+              <button class="btn-secondary-link" onclick="location.href='page2c-downsell1c.html'">
+                No thanks, I’ll skip the extra month
+              </button>
+              <div class="cta-subcopy">
+                ⏳ This 1-bottle add-on is only shown here as part of your New Year 2026 bundle flow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>© 2026 UNALTERED LLC. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

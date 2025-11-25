@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNALTERED – Order Confirmed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-light: #FAF9F6;
+      --bg-warm: #F6EBD7;
+      --accent: #EF4684;
+      --accent-soft: #ffe4f0;
+      --text-main: #111111;
+      --text-muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --border-soft: #e5e3dc;
+      --success: #26a269;
+      --success-soft: #d4f4e1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--bg-light), var(--bg-warm));
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 24px;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 160px;
+      height: 40px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-mini-icons {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .mini-icon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .mini-icon-pill span {
+      font-size: 12px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(239,70,132,0.2);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.08s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(239,70,132,0.28);
+      background-color: #e5397a;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 14px;
+    }
+
+    .btn-secondary-link {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.96);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .section--no-border {
+      border: none;
+      background: none;
+      padding: 0;
+    }
+
+    .hero-confirm {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--success-soft);
+      color: var(--success);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .hero-pill span.icon {
+      font-size: 16px;
+    }
+
+    .hero-confirm h1 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin: 0 0 6px;
+    }
+
+    .hero-confirm p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+
+    .hero-subline {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 220px;
+      border-radius: 24px;
+      border: 2px dashed var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px;
+      background:#fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-pill-row {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .image-pill {
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0 0 12px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      padding: 14px;
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .order-summary-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 6px 0;
+      border-bottom: 1px solid #f1eee5;
+      gap: 8px;
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+    }
+
+    .order-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .order-item-name {
+      font-weight: 600;
+    }
+
+    .order-item-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .order-item-qty {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .order-total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .order-total-label {
+      font-weight: 600;
+    }
+
+    .order-total-value {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .value {
+      font-size: 13px;
+    }
+
+    .value-strong {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+    }
+
+    .timeline li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-step-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .timeline-step-content strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .timeline-step-content span {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .cta-row {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .download-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .download-badge {
+      height: 38px;
+      width: 120px;
+      border-radius: 8px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      background-color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill span.icon {
+      font-size: 14px;
+    }
+
+    .mini-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-confirm {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-placeholder">UNALTERED LOGO</div>
+      <div class="header-right">
+        <div class="header-mini-icons">
+          <div class="mini-icon-pill">
+            <span>🔒</span><span>Secure order</span>
+          </div>
+          <div class="mini-icon-pill">
+            <span>📧</span><span>Confirmation sent by email</span>
+          </div>
+        </div>
+        <!-- Link back to main site or account area as needed -->
+        <a href="#" class="btn-secondary-link">Go to UNALTERED homepage</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO CONFIRMATION -->
+      <div class="section">
+        <div class="hero-confirm">
+          <div>
+            <div class="hero-pill">
+              <span class="icon">✅</span>
+              <span>Order Confirmed</span>
+            </div>
+            <h1>Your New Year 2026 Reset Is Officially Locked In</h1>
+            <p>
+              Thank you for your order. We’ve emailed your receipt and will send tracking details as soon as your
+              package ships.
+            </p>
+            <div class="hero-subline">
+              Keep this page open while you complete the steps below — they’ll help you get the most out of your GLP-1
+              Support stack and the UNALTERED App.
+            </div>
+          </div>
+
+          <div class="image-placeholder">
+            <div class="image-pill-row">
+              <div class="image-pill">📦 Order Packed Soon</div>
+              <div class="image-pill">📱 App + Supplements</div>
+            </div>
+            IMAGE: ORDER CONFIRMATION / DELIVERY GRAPHIC<br><br>
+            <div style="font-size: 11px; text-transform:none;">
+              (Replace with an illustration of supplements + phone + checkmark)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY + SHIPPING -->
+      <div class="section">
+        <div class="grid-2">
+          <!-- ORDER SUMMARY -->
+          <div>
+            <h2 class="section-title">
+              <span class="section-title-icon">🧾</span>
+              Order Summary
+            </h2>
+            <p class="section-subtitle">
+              Review the key details for your records. Exact pricing, taxes, and discounts will match the amounts
+              shown on your emailed receipt.
+            </p>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-icon">📦</div>
+                <div class="card-title">Items in Your Order</div>
+              </div>
+
+              <ul class="order-summary-list">
+                <!-- Replace with dynamic items from your backend -->
+                <li class="order-item">
+                  <div class="order-item-main">
+                    <span class="order-item-name">UNALTERED GLP-1 Support</span>
+                    <span class="order-item-meta">Natural GLP-1 support formula for appetite-focused moms</span>
+                  </div>
+                  <div class="order-item-qty">Qty: 1</div>
+                </li>
+
+                <li class="order-item">
+                  <div class="order-item-main">
+                    <span class="order-item-name">UNALTERED Slim Tighten Tone</span>
+                    <span class="order-item-meta">Women’s belly-focused formula (part of New Year stack)</span>
+                  </div>
+                  <div class="order-item-qty">Qty: 2</div>
+                </li>
+
+                <!-- Example optional upsells (replace/remove as needed) -->
+                <li class="order-item">
+                  <div class="order-item-main">
+                    <span class="order-item-name">UNALTERED Appetite Suppressant</span>
+                    <span class="order-item-meta">Fiber-based appetite support featuring glucomannan</span>
+                  </div>
+                  <div class="order-item-qty">Qty: 1</div>
+                </li>
+              </ul>
+
+              <div class="order-total-row">
+                <span class="order-total-label">Estimated total</span>
+                <span class="order-total-value">$XXX.XX</span>
+              </div>
+              <div class="mini-note">
+                Exact totals, taxes, and discounts will appear on your final receipt and may vary by location.
+              </div>
+            </div>
+          </div>
+
+          <!-- SHIPPING + CONTACT -->
+          <div>
+            <h2 class="section-title">
+              <span class="section-title-icon">📍</span>
+              Shipping & Contact Details
+            </h2>
+            <p class="section-subtitle">
+              A confirmation email with full details has been sent. Use it for any future questions about this order.
+            </p>
+
+            <div class="card">
+              <div class="label">Order number</div>
+              <div class="value-strong">#UAL-2026-XXXX</div>
+
+              <div style="height: 10px;"></div>
+
+              <div class="label">Shipping to</div>
+              <div class="value">
+                <!-- Replace with dynamic shipping info -->
+                First Last Name<br />
+                Street Address Line 1<br />
+                City, State ZIP<br />
+                Country
+              </div>
+
+              <div style="height: 10px;"></div>
+
+              <div class="label">Contact email</div>
+              <div class="value">you@example.com</div>
+
+              <div style="height: 10px;"></div>
+
+              <div class="label">Estimated shipping</div>
+              <div class="value">Ships in X–Y business days (you’ll receive tracking once it’s on the way).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEXT STEPS: APP + QUICK START -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🚀</span>
+          3 Simple Steps to Get Ready Before Your Box Arrives
+        </h2>
+        <p class="section-subtitle">
+          These steps are designed to give you a head start, so the day your supplements arrive, you already have a plan.
+        </p>
+
+        <ul class="timeline">
+          <li>
+            <div class="timeline-step-icon">1</div>
+            <div class="timeline-step-content">
+              <strong>Download the UNALTERED App</strong>
+              <span>
+                This is where your checklists, logging tools, and progress tracking live. Use the same email you used
+                at checkout for a smoother experience.
+              </span>
+              <div class="download-badges">
+                <div class="download-badge">App Store Badge</div>
+                <div class="download-badge">Google Play Badge</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-step-icon">2</div>
+            <div class="timeline-step-content">
+              <strong>Complete your New Year 2026 Fit-Mom Setup</strong>
+              <span>
+                Inside the app, look for your <strong>“New Year Fit-Mom Quick Start”</strong> checklist. It will guide
+                you through logging your starting weight, setting your goal, and saving your first progress photo.
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-step-icon">3</div>
+            <div class="timeline-step-content">
+              <strong>Turn on gentle reminders</strong>
+              <span>
+                Enable notifications so the app can remind you to log meals, track movement, and note when you start
+                taking your GLP-1 Support + Slim Tighten Tone stack.
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- WHAT TO EXPECT NEXT (TIMELINE) -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">📆</span>
+          What Happens Next
+        </h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📧</div>
+              <div class="card-title">Within the next few minutes</div>
+            </div>
+            <ul class="order-summary-list">
+              <li class="order-item">
+                <div class="order-item-main">
+                  <span class="order-item-name">Order confirmation email</span>
+                  <span class="order-item-meta">
+                    Contains your receipt, order number, and a summary of everything in your New Year 2026 stack.
+                  </span>
+                </div>
+              </li>
+              <li class="order-item">
+                <div class="order-item-main">
+                  <span class="order-item-name">Account & app instructions</span>
+                  <span class="order-item-meta">
+                    Look out for instructions on connecting your purchase to the UNALTERED App experience.
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🚚</div>
+              <div class="card-title">Over the next few days</div>
+            </div>
+            <ul class="order-summary-list">
+              <li class="order-item">
+                <div class="order-item-main">
+                  <span class="order-item-name">Shipment & tracking</span>
+                  <span class="order-item-meta">
+                    You’ll receive a shipping confirmation with tracking details as soon as your package leaves our
+                    facility.
+                  </span>
+                </div>
+              </li>
+              <li class="order-item">
+                <div class="order-item-main">
+                  <span class="order-item-name">Unboxing & first day checklist</span>
+                  <span class="order-item-meta">
+                    When your order arrives, open the app and follow the in-box card and your daily checklist to start
+                    your routine safely and intentionally.
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pill-row">
+          <div class="pill"><span class="icon">👩‍👧</span><span>Designed for busy moms, not “perfect” days</span></div>
+          <div class="pill"><span class="icon">📱</span><span>Supplements + app working together</span></div>
+        </div>
+      </div>
+
+      <!-- SUPPORT + QUESTIONS -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🤝</span>
+          Need Help With Your Order or Setup?
+        </h2>
+        <p class="section-subtitle">
+          If something doesn’t look right or you have questions about your stack, we’re here to help.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📨</div>
+              <div class="card-title">Order & shipping questions</div>
+            </div>
+            <div class="value">
+              Email our support team using the address listed in your confirmation email. Include your order number
+              <strong>#UAL-2026-XXXX</strong> in the subject line to help us assist you faster.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📱</div>
+              <div class="card-title">App & routine questions</div>
+            </div>
+            <div class="value">
+              For questions about using the UNALTERED App or building your 2026 routine, look for the in-app help
+              center or support link. You can also reply to any onboarding email you receive from us.
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-note">
+          Important: Always review product labels and consult your healthcare provider before starting any new dietary
+          supplement, especially if you are pregnant, nursing, have a medical condition, or are taking medications.
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 UNALTERED LLC. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
