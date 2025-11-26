@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNALTERED – Add Appetite Suppressant + FREE Slim Tighten Tone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-light: #FAF9F6;
+      --bg-warm: #F6EBD7;
+      --accent: #EF4684;
+      --accent-soft: #FFE4F0;
+      --text-main: #111111;
+      --text-muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --border-soft: #e5e3dc;
+      --success: #26a269;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--bg-light), var(--bg-warm));
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 18px;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 140px;
+      height: 36px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .step-indicator {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .step-indicator strong {
+      color: var(--accent);
+    }
+
+    .mini-secure {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .mini-secure span.icon {
+      font-size: 13px;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.96);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0 0 12px;
+    }
+
+    .hero-upsell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-kicker span.icon {
+      font-size: 14px;
+    }
+
+    .hero-upsell h1 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    .hero-highlight {
+      background: rgba(239,70,132,0.06);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .hero-highlight .icon-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      background-color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill span.icon {
+      font-size: 14px;
+    }
+
+    .hero-product {
+      border-radius: 20px;
+      border: 2px dashed var(--border-soft);
+      background:#fff;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-product img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .hero-product-pill-row {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .hero-product-pill {
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .price-box {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .price-main {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .price-compare {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .saving-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fbe7ef;
+      color: var(--accent);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .saving-pill span.icon {
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 22px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(239,70,132,0.2);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.08s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(239,70,132,0.28);
+      background-color: #e5397a;
+    }
+
+    .btn-primary .arrow {
+      font-size: 14px;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 12px;
+      border: 1px solid var(--border-soft);
+      background:#fff;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-ghost span.icon {
+      font-size: 14px;
+    }
+
+    .cta-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .mini-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+      font-size: 13px;
+    }
+
+    .checklist li {
+      margin-bottom: 4px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .order-summary {
+      font-size: 13px;
+    }
+
+    .order-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+
+    .order-summary-label {
+      color: var(--text-muted);
+    }
+
+    .order-summary-value {
+      font-weight: 600;
+    }
+
+    .order-summary-total {
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 6px;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .order-summary-total strong {
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-upsell {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-placeholder">UNALTERED LOGO</div>
+      <div class="header-right">
+        <div class="step-indicator">
+          Step <strong>3</strong> of 4 · Final Upgrade Before Checkout
+        </div>
+        <div class="mini-secure">
+          <span class="icon">🔒</span>
+          <span>Secure order – items are reserved</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / MAIN UPSELL 2 -->
+      <div class="section">
+        <div class="hero-upsell">
+          <div>
+            <div class="hero-kicker">
+              <span class="icon">🍽️</span>
+              <span>Struggle Most with Cravings & Late-Night Snacking?</span>
+            </div>
+            <h1>Add Appetite Support + Get Another Slim Tighten Tone FREE</h1>
+
+            <div class="hero-highlight">
+              <div class="icon-circle">💊</div>
+              <div>
+                Add <strong>1 bottle of UNALTERED Appetite Suppressant</strong> for just <strong>$39.99</strong> and
+                get <strong>1 extra bottle of Slim Tighten Tone FREE</strong> (an instant savings of $29.99).
+              </div>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); margin: 0 0 6px;">
+              GLP-1 Support is designed to help support appetite pathways from the inside. This stack adds a
+              <em>second layer</em> of help with glucomannan-based fiber to further support fullness—plus more
+              Slim Tighten Tone focused on belly areas.
+            </p>
+
+            <div class="pill-row">
+              <div class="pill"><span class="icon">🥗</span><span>Extra support around hunger & portions</span></div>
+              <div class="pill"><span class="icon">💊</span><span>UNALTERED Appetite Suppressant + Slim Tighten Tone</span></div>
+              <div class="pill"><span class="icon">💸</span><span>Bonus bottle free (save $29.99)</span></div>
+            </div>
+
+            <div class="price-box">
+              <div class="price-row">
+                <div class="price-main">$39.99</div>
+                <div class="price-note">for Appetite Suppressant + FREE Slim Tighten Tone</div>
+              </div>
+              <div class="price-row" style="margin-top: 2px;">
+                <div class="price-compare">$69.98+</div>
+                <div class="price-note">(if purchased separately)</div>
+              </div>
+              <div class="saving-pill">
+                <span class="icon">💰</span>
+                <span>Instant $29.99 savings on this page</span>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <a href="page4-continuity.html" class="btn-primary">
+                <span>Yes, Add Appetite Support + FREE Slim Tighten Tone</span>
+                <span class="arrow">→</span>
+              </a>
+              <a href="page4-continuity.html" class="btn-ghost">
+                <span class="icon">✕</span>
+                <span>No thanks, I’ll skip this extra appetite & belly support</span>
+              </a>
+            </div>
+
+            <div class="mini-note">
+              This stack is offered only once, right here. If you decide to add appetite support later, you will need
+              to purchase bottles separately at their normal prices.
+            </div>
+          </div>
+
+          <div class="hero-product">
+            <div class="hero-product-pill-row">
+              <div class="hero-product-pill">💊 Appetite Suppressant</div>
+              <div class="hero-product-pill">🎁 Slim Tighten Tone FREE</div>
+            </div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0584/9540/2150/files/GLP-1_Secondary_Images_3b254285-6710-4480-8b17-f2277067956b.png?v=1764191297"
+              alt="UNALTERED Appetite Suppressant and Slim Tighten Tone add-on bundle"
+            />
+            <div class="mini-note">
+              Image for illustration only. Bottles and labels may vary slightly based on production runs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY THIS STACK / HOW IT FITS -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🧩</span>
+          How This Add-On Complements Your Current Stack
+        </h2>
+        <p class="section-subtitle">
+          You’ve already committed to GLP-1 Support (and Slim Tighten Tone). This combo is for women who know that
+          cravings, emotional eating, and evening snacking are their biggest friction points.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🧬</div>
+              <div class="card-title">Layered support around appetite</div>
+            </div>
+            <ul class="checklist">
+              <li>
+                GLP-1 Support: designed to support your body’s natural GLP-1 pathways associated with fullness and
+                appetite.
+              </li>
+              <li>
+                Appetite Suppressant: powered by glucomannan fiber to help you feel fuller with meals and snacks when
+                used as directed.
+              </li>
+              <li>
+                Together, they support feeling satisfied with reasonable portions instead of constantly “white-knuckling”
+                cravings.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">✨</div>
+              <div class="card-title">Extra Slim Tighten Tone where you care most</div>
+            </div>
+            <ul class="checklist">
+              <li>
+                You already secured Slim Tighten Tone in your main bundle (and possibly from earlier steps).
+              </li>
+              <li>
+                This free bottle extends its potential impact around your midsection when combined with a healthy
+                lifestyle.
+              </li>
+              <li>
+                Useful if belly/waist changes are one of your main visual goals for 2026.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY VIEW -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🧾</span>
+          Your Order with the Appetite Support Bundle
+        </h2>
+        <p class="section-subtitle">
+          Here’s how your shipment changes if you say “yes” to this add-on. (Exact counts will depend on how many GLP-1
+          bottles you selected earlier in the funnel.)
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📦</div>
+              <div class="card-title">What You Already Have Locked In</div>
+            </div>
+            <div class="order-summary">
+              <div class="order-summary-row">
+                <span class="order-summary-label">UNALTERED GLP-1 Support</span>
+                <span class="order-summary-value">Your selected bottles (from earlier steps)</span>
+              </div>
+              <div class="order-summary-row">
+                <span class="order-summary-label">UNALTERED Slim Tighten Tone</span>
+                <span class="order-summary-value">At least 2 bottles (with your main bundle)</span>
+              </div>
+              <div class="order-summary-total">
+                <div class="order-summary-row">
+                  <span class="order-summary-label">Core focus</span>
+                  <span class="order-summary-value"><strong>Appetite pathways + midsection support</strong></span>
+                </div>
+              </div>
+              <div class="mini-note">
+                This is your baseline: GLP-1 Support + Slim Tighten Tone, plus the New Year bonus tools in the UNALTERED App.
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-color: var(--accent); box-shadow: 0 8px 20px rgba(239,70,132,0.12);">
+            <div class="card-header">
+              <div class="card-icon">➕</div>
+              <div class="card-title">What This Add-On Adds</div>
+            </div>
+            <div class="order-summary">
+              <div class="order-summary-row">
+                <span class="order-summary-label">UNALTERED Appetite Suppressant</span>
+                <span class="order-summary-value">+1 bottle</span>
+              </div>
+              <div class="order-summary-row">
+                <span class="order-summary-label">UNALTERED Slim Tighten Tone</span>
+                <span class="order-summary-value">+1 bottle (FREE)</span>
+              </div>
+              <div class="order-summary-total">
+                <div class="order-summary-row">
+                  <span class="order-summary-label">Your price for this bundle</span>
+                  <span class="order-summary-value"><strong>$39.99</strong></span>
+                </div>
+              </div>
+              <div class="mini-note">
+                Purchased separately at another time, you would expect to pay at least $69.98+ for these two bottles.
+                Here, you pay $39.99 total and get the Slim Tighten Tone bottle free.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top: 14px;">
+          <a href="page4-continuity.html" class="btn-primary">
+            <span>Yes, Add Appetite Support + FREE Slim Tighten Tone</span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="page4-continuity.html" class="btn-ghost">
+            <span class="icon">✕</span>
+            <span>No, I’ll stick with the stack I already have</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- REASSURANCE -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🛡️</span>
+          You’re Still Covered by Your Overall Promise
+        </h2>
+        <p class="section-subtitle">
+          This add-on is part of the same order and sits under your existing guarantee framework. We built these options
+          so you can customize your stack around your biggest challenges—without feeling trapped or overcommitted.
+        </p>
+        <p class="mini-note">
+          As always, supplements work best when used consistently as directed, alongside a healthy diet and movement
+          routine. Talk to your healthcare provider before starting any new supplement, especially if you have a medical
+          condition or take medications.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 UNALTERED LLC. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
