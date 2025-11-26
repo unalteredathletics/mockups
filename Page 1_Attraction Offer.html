@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNALTERED – GLP-1 Support New Year 3-Bottle Bundle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-light: #FAF9F6;
+      --bg-warm: #F6EBD7;
+      --accent: #EF4684;
+      --accent-soft: #FFE4F0;
+      --text-main: #111111;
+      --text-muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --border-soft: #e5e3dc;
+      --success: #26a269;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--bg-light), var(--bg-warm));
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 24px;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 160px;
+      height: 40px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-mini-icons {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .mini-icon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .mini-icon-pill span {
+      font-size: 12px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(239,70,132,0.2);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.08s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(239,70,132,0.28);
+      background-color: #e5397a;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 14px;
+    }
+
+    .btn-secondary-link {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.96);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .section--soft {
+      background-color: rgba(255,255,255,0.9);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-kicker .hero-icon {
+      font-size: 16px;
+    }
+
+    .hero-text h1 {
+      font-size: 28px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 14px;
+    }
+
+    .hero-highlight {
+      background: rgba(239,70,132,0.06);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight .icon-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      background-color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill span.icon {
+      font-size: 14px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 240px;
+      border-radius: 24px;
+      border: 2px dashed var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px;
+      background:#fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-pill-row {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .image-pill {
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .trust-pill span.icon {
+      font-size: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      padding: 14px;
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .checklist li {
+      margin-bottom: 6px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .cta-row {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cta-subcopy {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* PRICING BLOCKS */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .pricing-card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+      padding: 14px;
+      font-size: 13px;
+      position: relative;
+    }
+
+    .pricing-card--featured {
+      border-color: var(--accent);
+      box-shadow: 0 10px 24px rgba(239,70,132,0.16);
+    }
+
+    .pricing-tag {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pricing-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pricing-label span.icon {
+      font-size: 13px;
+    }
+
+    .price-main-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .price-main {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .price-compare {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-note {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .saving-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fbe7ef;
+      color: var(--accent);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .saving-pill span.icon {
+      font-size: 13px;
+    }
+
+    .radio-row {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    .radio-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .radio-row input[type="radio"] {
+      accent-color: var(--accent);
+    }
+
+    /* BONUS TABLE */
+
+    .bonus-table-wrapper {
+      overflow-x: auto;
+    }
+
+    table.bonus-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    table.bonus-table th,
+    table.bonus-table td {
+      border: 1px solid var(--border-soft);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    table.bonus-table th {
+      background: #faf4ff;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .price-strike {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .price-free {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .bonus-icon {
+      font-size: 16px;
+      margin-right: 6px;
+    }
+
+    .bonus-total-row {
+      background: #fff7fb;
+      font-weight: 700;
+    }
+
+    .bonus-total-label {
+      text-align: right;
+    }
+
+    /* FAQ / GUARANTEE */
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-soft);
+      padding: 10px 0;
+      font-size: 13px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .faq-q span.icon {
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .guarantee-strip {
+      border-radius: 14px;
+      border: 1px solid rgba(239,70,132,0.24);
+      background: linear-gradient(135deg, #ffeef7, #ffffff);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .guarantee-strip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.3);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge span.icon {
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-placeholder">UNALTERED LOGO</div>
+      <div class="header-right">
+        <div class="header-mini-icons">
+          <div class="mini-icon-pill">
+            <span>👩‍👧</span><span>Built for busy moms</span>
+          </div>
+          <div class="mini-icon-pill">
+            <span>🔒</span><span>Secure checkout</span>
+          </div>
+        </div>
+        <a href="page2-upsell1.html" class="btn-primary">
+          <span>Claim My 3-Bottle Bundle</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <div class="section">
+        <div class="hero">
+          <div class="hero-text">
+            <div class="hero-kicker">
+              <span class="hero-icon">🎉</span>
+              <span>New Year 2026 Fit-Mom Launch</span>
+            </div>
+
+            <h1>Buy 1 GLP-1 Support, Get 2 Slim Tighten Tone FREE</h1>
+
+            <div class="hero-highlight">
+              <div class="icon-circle">💊</div>
+              <div>
+                Get <strong>3 total bottles</strong> for your New Year reset: 
+                <strong>1 UNALTERED GLP-1 Support</strong> (for appetite support) +
+                <strong>2 UNALTERED Slim Tighten Tone</strong> (for belly-focused support) —
+                and only pay for the GLP-1 Support.
+              </div>
+            </div>
+
+            <p>
+              Designed for women 30+ who want support around appetite and stubborn areas —
+              without going down the route of drugs or surgery. One simple decision now sets up
+              your first 60 days of 2026 with built-in momentum.
+            </p>
+
+            <div class="pill-row">
+              <div class="pill"><span class="icon">🧬</span><span>Designed to support appetite pathways</span></div>
+              <div class="pill"><span class="icon">💗</span><span>Formulated for women 30+ who’ve had kids</span></div>
+              <div class="pill"><span class="icon">📱</span><span>Guided inside the UNALTERED App</span></div>
+            </div>
+
+            <div class="cta-row">
+              <a href="page2-upsell1.html" class="btn-primary">
+                <span>Yes, I Want This New Year Bundle</span>
+                <span class="arrow">→</span>
+              </a>
+              <div class="cta-subcopy">
+                🎯 Limited-time launch: Buy 1 GLP-1 Support ($79.99), get 2 Slim Tighten Tone FREE (save $59.98).
+              </div>
+            </div>
+
+            <div class="trust-row">
+              <div class="trust-pill">
+                <span class="icon">🌱</span><span>Drug-free & surgery-free approach</span>
+              </div>
+              <div class="trust-pill">
+                <span class="icon">👩‍👧</span><span>Made for real mom schedules</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder">
+            <div class="image-pill-row">
+              <div class="image-pill">💊 1× GLP-1 Support</div>
+              <div class="image-pill">🎁 2× Slim Tighten Tone FREE</div>
+            </div>
+            IMAGE: 3-BOTTLE BUNDLE (1 GLP-1 SUPPORT + 2 SLIM TIGHTEN TONE)<br><br>
+            <div style="font-size: 11px; text-transform:none;">
+              (Replace with product render of all three bottles together)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING & SUBSCRIBE VS ONE-TIME -->
+      <div class="section section--soft">
+        <h2 class="section-title">
+          <span class="section-title-icon">💸</span>
+          Choose One-Time or Subscribe & Save
+        </h2>
+        <p class="section-subtitle">
+          You always get the same launch bundle (1 GLP-1 Support + 2 Slim Tighten Tone FREE). 
+          The only choice: whether you want to save an extra 15% with Subscribe & Save.
+        </p>
+
+        <div class="pricing-grid">
+          <!-- ONE-TIME PURCHASE -->
+          <div class="pricing-card">
+            <div class="pricing-label">
+              <span class="icon">🛍️</span><span>One-Time Purchase</span>
+            </div>
+            <div class="price-main-row">
+              <span class="price-main">$79.99</span>
+              <span class="price-compare">$139.97</span>
+            </div>
+            <div class="price-note">
+              You pay full price for 1 bottle of GLP-1 Support, and we send you 2 bottles of 
+              Slim Tighten Tone for free (save $59.98).
+            </div>
+            <div class="saving-pill">
+              <span class="icon">💰</span>
+              <span>$59.98 in free product</span>
+            </div>
+
+            <ul class="checklist" style="margin-top: 10px;">
+              <li>3 total bottles shipped as a one-time order.</li>
+              <li>No automatic renewals.</li>
+              <li>Perfect if you want to try the stack before deciding on a routine.</li>
+            </ul>
+
+            <div class="cta-row">
+              <a href="page2-upsell1.html" class="btn-primary">
+                <span>Continue with One-Time Purchase</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- SUBSCRIBE & SAVE -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-tag">Most Popular</div>
+            <div class="pricing-label">
+              <span class="icon">🔁</span><span>Subscribe & Save 15%</span>
+            </div>
+            <div class="price-main-row">
+              <span class="price-main">$67.99</span>
+              <span class="price-compare">$79.99</span>
+            </div>
+            <div class="price-note">
+              Save an extra 15% on your GLP-1 Support today and on every future renewal,
+              while still receiving 2 Slim Tighten Tone bottles free with this first shipment.
+            </div>
+            <div class="saving-pill">
+              <span class="icon">💳</span>
+              <span>Extra 15% off today + members-only future rate</span>
+            </div>
+
+            <ul class="checklist" style="margin-top: 10px;">
+              <li>Same 3-bottle launch bundle today (1 GLP-1 + 2 Slim Tighten Tone free).</li>
+              <li>Future GLP-1 Support shipments billed at your discounted subscription rate.</li>
+              <li>Renewal schedule can be aligned with however many GLP-1 bottles you choose in this funnel.</li>
+            </ul>
+
+            <div class="radio-row">
+              <label>
+                <input type="radio" name="subscribe_choice" checked />
+                <span>Yes, enroll me in Subscribe & Save for ongoing GLP-1 Support.</span>
+              </label>
+              <label>
+                <input type="radio" name="subscribe_choice" />
+                <span>No, I prefer this order as one-time only.</span>
+              </label>
+            </div>
+
+            <div class="cta-row">
+              <a href="page2-upsell1.html" class="btn-primary">
+                <span>Continue with Subscribe & Save</span>
+                <span class="arrow">→</span>
+              </a>
+              <div class="cta-subcopy">
+                You’ll see the final subscription terms and renewal schedule clearly on checkout before confirming.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW THE STACK FITS A BUSY MOM SCHEDULE -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">👩‍👧</span>
+          How This 3-Bottle Stack Is Built for Busy Moms
+        </h2>
+        <p class="section-subtitle">
+          The goal isn’t perfection. It’s a realistic system that gives you support around appetite and stubborn areas,
+          while the UNALTERED App helps make your everyday decisions a little easier.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">💊</div>
+              <div class="card-title">UNALTERED GLP-1 Support (1 bottle)</div>
+            </div>
+            <ul class="checklist">
+              <li>Designed to support your body’s own GLP-1 pathways related to appetite.</li>
+              <li>Best used consistently according to the label directions.</li>
+              <li>Works alongside your meals, movement, and routines you build in the app.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">✨</div>
+              <div class="card-title">UNALTERED Slim Tighten Tone (2 bottles FREE)</div>
+            </div>
+            <ul class="checklist">
+              <li>Women’s formula created to support a slimmer, more “tightened and toned” look over time with a healthy lifestyle.</li>
+              <li>Intended to complement GLP-1 Support as part of your 2026 routine.</li>
+              <li>Extra runway: your free bottles extend your experience without extra cost.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="badge-row">
+          <div class="badge"><span class="icon">📱</span><span>Guided through the UNALTERED App</span></div>
+          <div class="badge"><span class="icon">🌱</span><span>Non-drug, non-surgery approach</span></div>
+        </div>
+      </div>
+
+      <!-- NEW YEAR BONUS STACK (APP FEATURES AS BONUSES) -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🎁</span>
+          New Year 2026 Fit-Mom Bonus Stack (Included Free)
+        </h2>
+        <p class="section-subtitle">
+          Your bottles are just the beginning. You also unlock app-powered tools designed to make your first weeks
+          feel structured, supported, and doable — even with a full plate.
+        </p>
+
+        <div class="bonus-table-wrapper">
+          <table class="bonus-table">
+            <thead>
+              <tr>
+                <th>Bonus</th>
+                <th>What You Get</th>
+                <th style="width: 140px;">Regular Value</th>
+                <th style="width: 110px;">Today</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="bonus-icon">✅</span><strong>New Year Fit-Mom Quick Start Checklist</strong>
+                </td>
+                <td>
+                  A tap-to-follow onboarding flow that walks you through logging your starting weight, progress photo,
+                  first supplement day, and first meal — so you don’t have to figure it out alone.
+                </td>
+                <td><span class="price-strike">$29</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">🍽️</span><strong>Smart-Calorie Meal Plan Map</strong>
+                </td>
+                <td>
+                  A custom meal plan generated to your calorie target, food preferences, and allergies — designed to
+                  align with your goals and fit inside real mom schedules.
+                </td>
+                <td><span class="price-strike">$49</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">🧺</span><strong>1-Tap Smart Cart Grocery List</strong>
+                </td>
+                <td>
+                  Auto-generated grocery lists based on your meal plan, so you can get in and out of the store faster
+                  without wondering what to buy.
+                </td>
+                <td><span class="price-strike">$29</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">📸</span><strong>Tap-to-Track Calorie Camera</strong>
+                </td>
+                <td>
+                  Log meals with a quick photo or short description instead of manual entry — ideal when you’re juggling
+                  kids, work, and everything else.
+                </td>
+                <td><span class="price-strike">$39</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">⏰</span><strong>Craving-Rescue Reminder Coach</strong>
+                </td>
+                <td>
+                  Gentle notifications that nudge you to log meals, water, and movement — so your routine doesn’t get
+                  lost in the chaos of the day.
+                </td>
+                <td><span class="price-strike">$29</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">🏃‍♀️</span><strong>10-Minute Movement Micro-Routine Library</strong>
+                </td>
+                <td>
+                  Short, followable routines you can do at home or at the gym — no “perfect” workout window required.
+                </td>
+                <td><span class="price-strike">$59</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">🍳</span><strong>Flavor-Fix Recipe Lab</strong>
+                </td>
+                <td>
+                  App-powered recipes customized to your preferred flavors (American, Latin, Italian, etc.) and meal
+                  type — so “healthy” still tastes like you.
+                </td>
+                <td><span class="price-strike">$39</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="bonus-icon">📷</span><strong>Progress Mirror Photo Studio</strong>
+                </td>
+                <td>
+                  A simple system to capture and compare your progress photos side-by-side, so you can see changes your
+                  scale might miss.
+                </td>
+                <td><span class="price-strike">$29</span></td>
+                <td><span class="price-free">FREE</span></td>
+              </tr>
+
+              <tr class="bonus-total-row">
+                <td colspan="2" class="bonus-total-label">
+                  Total bonus value if purchased separately:
+                </td>
+                <td colspan="2">
+                  <span class="price-strike">$273</span> <span class="price-free">FREE with your 3-bottle bundle today</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cta-row">
+          <a href="page2-upsell1.html" class="btn-primary">
+            <span>Yes, Unlock My Bundle + Bonus Stack</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- GUARANTEE / RISK REVERSAL -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🛡️</span>
+          Our Care-First Promise
+        </h2>
+        <div class="guarantee-strip">
+          <div class="guarantee-strip-badge">
+            <span>🤝</span>
+            <span>Care-first, pressure-off approach</span>
+          </div>
+          <div>
+            We built this bundle and app experience for women who want support, not stress. You’ll see all order and
+            subscription details clearly at checkout before you confirm anything. If you have questions about your
+            purchase or experience, our team is here to help within our policies.
+          </div>
+        </div>
+
+        <div class="badge-row" style="margin-top: 12px;">
+          <div class="badge"><span class="icon">📧</span><span>Clear email confirmation after purchase</span></div>
+          <div class="badge"><span class="icon">📱</span><span>Guided app onboarding</span></div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">❓</span>
+          Quick Answers Before You Decide
+        </h2>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">💊</span>
+            <span>What exactly do I get with this bundle?</span>
+          </div>
+          <div class="faq-a">
+            Today’s launch bundle includes 1 bottle of UNALTERED GLP-1 Support and 2 free bottles of UNALTERED Slim 
+            Tighten Tone (3 total bottles), plus access to the UNALTERED App experience and the New Year 2026 Fit-Mom Bonus Stack.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">🔁</span>
+            <span>How does Subscribe & Save work with this bundle?</span>
+          </div>
+          <div class="faq-a">
+            If you choose Subscribe & Save, you still receive the same 3-bottle launch bundle today. Going forward,
+            your GLP-1 Support will renew at a discounted subscription rate on a schedule that can be aligned with the
+            number of GLP-1 bottles you select in this funnel. The exact terms will be shown clearly at checkout.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">🕒</span>
+            <span>How long will this New Year launch offer be available?</span>
+          </div>
+          <div class="faq-a">
+            This is a limited-time New Year 2026 promotion. To keep things fair and manageable, we may end or adjust
+            the offer without notice once we hit our internal limits.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="icon">⚠️</span>
+            <span>Anything I should know before taking these products?</span>
+          </div>
+          <div class="faq-a">
+            Always read and follow the directions on each product label. Talk to your healthcare provider before using
+            any dietary supplement, especially if you are pregnant, nursing, have a medical condition, or take
+            medications. Supplements are intended to complement — not replace — a healthy lifestyle.
+          </div>
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div class="section">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <h2 class="section-title">
+              <span class="section-title-icon">🎯</span>
+              Ready to Lock In Your New Year 3-Bottle Bundle?
+            </h2>
+            <p class="section-subtitle">
+              One decision now sets up your first 60 days of 2026 with GLP-1 Support, belly-focused help, and a full
+              in-app system that’s built for real mom life — not “perfect” days.
+            </p>
+          </div>
+          <div>
+            <div class="cta-row" style="justify-content: flex-start;">
+              <a href="page2-upsell1.html" class="btn-primary">
+                <span>Yes, Claim My Bundle & Continue</span>
+                <span class="arrow">→</span>
+              </a>
+              <div class="cta-subcopy">
+                ⏳ This New Year launch offer (Buy 1 GLP-1 Support, Get 2 Slim Tighten Tone FREE) is only available as
+                part of this special funnel.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 UNALTERED LLC. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
