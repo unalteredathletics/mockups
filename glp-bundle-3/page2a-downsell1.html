@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNALTERED – Keep Your 90-Day GLP-1 Supply with Split Payments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-light: #FAF9F6;
+      --bg-warm: #F6EBD7;
+      --accent: #EF4684;
+      --accent-soft: #FFE4F0;
+      --text-main: #111111;
+      --text-muted: #6b6b6b;
+      --card-bg: #ffffff;
+      --border-soft: #e5e3dc;
+      --success: #26a269;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--bg-light), var(--bg-warm));
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0 18px;
+      gap: 12px;
+    }
+
+    .logo-placeholder {
+      width: 140px;
+      height: 36px;
+      border: 1px dashed var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background:#fff;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .step-indicator {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .step-indicator strong {
+      color: var(--accent);
+    }
+
+    .mini-secure {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+    }
+
+    .mini-secure span.icon {
+      font-size: 13px;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.96);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0 0 12px;
+    }
+
+    .hero-upsell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-kicker span.icon {
+      font-size: 14px;
+    }
+
+    .hero-upsell h1 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    .hero-highlight {
+      background: rgba(239,70,132,0.06);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .hero-highlight .icon-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(239,70,132,0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      background-color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill span.icon {
+      font-size: 14px;
+    }
+
+    .hero-product {
+      border-radius: 20px;
+      border: 2px dashed var(--border-soft);
+      background:#fff;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-product img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .hero-product-pill-row {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .hero-product-pill {
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .price-box {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .price-main {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .price-compare {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .split-row {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .saving-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fbe7ef;
+      color: var(--accent);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .saving-pill span.icon {
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 22px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(239,70,132,0.2);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.08s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(239,70,132,0.28);
+      background-color: #e5397a;
+    }
+
+    .btn-primary .arrow {
+      font-size: 14px;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 12px;
+      border: 1px solid var(--border-soft);
+      background:#fff;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-ghost span.icon {
+      font-size: 14px;
+    }
+
+    .cta-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .mini-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+      font-size: 13px;
+    }
+
+    .checklist li {
+      margin-bottom: 4px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .order-summary {
+      font-size: 13px;
+    }
+
+    .order-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+
+    .order-summary-label {
+      color: var(--text-muted);
+    }
+
+    .order-summary-value {
+      font-weight: 600;
+    }
+
+    .order-summary-total {
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 6px;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .order-summary-total strong {
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-upsell {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .header-right {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-placeholder">UNALTERED LOGO</div>
+      <div class="header-right">
+        <div class="step-indicator">
+          Step <strong>2</strong> of 4 · Flexible Payment Option
+        </div>
+        <div class="mini-secure">
+          <span class="icon">🔒</span>
+          <span>Secure order – items are reserved</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / MAIN DOWNSELL -->
+      <div class="section">
+        <div class="hero-upsell">
+          <div>
+            <div class="hero-kicker">
+              <span class="icon">💳</span>
+              <span>Before You Lose Your 90-Day Supply…</span>
+            </div>
+            <h1>Keep Your 3-Bottle GLP-1 Upgrade & Split Your Payment Into Two</h1>
+
+            <div class="hero-highlight">
+              <div class="icon-circle">⚖️</div>
+              <div>
+                Instead of paying $99 all at once, keep your full <strong>90-day supply</strong> of UNALTERED GLP-1 Support
+                and pay in <strong>two smaller payments</strong> of <strong>$49.50</strong>.
+              </div>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); margin: 0 0 6px;">
+              You said “no” to paying $99 today. That’s okay. We built this flexible option so you can still get
+              the long-term support you wanted—without putting all of it on your card right now.
+            </p>
+
+            <div class="pill-row">
+              <div class="pill"><span class="icon">📆</span><span>3 extra bottles of GLP-1 Support</span></div>
+              <div class="pill"><span class="icon">💸</span><span>Only $49.50 charged today</span></div>
+              <div class="pill"><span class="icon">⏰</span><span>Second $49.50 at a later scheduled date</span></div>
+            </div>
+
+            <div class="price-box">
+              <div class="price-row">
+                <div class="price-main">$49.50</div>
+                <div class="split-row">charged today</div>
+              </div>
+              <div class="split-row">
+                Then <strong>$49.50</strong> will be charged automatically on your stored payment method
+                on the clearly stated future date shown at checkout.
+              </div>
+              <div class="price-row" style="margin-top: 4px;">
+                <div class="price-compare">$239.97</div>
+                <div style="font-size: 13px; color: var(--text-muted);">
+                  total if you bought 3 bottles later at full price
+                </div>
+              </div>
+              <div class="saving-pill">
+                <span class="icon">💰</span>
+                <span>Still only $99 total – 58% off, just split in two</span>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <a href="page3-upsell2.html" class="btn-primary">
+                <span>Yes, Keep My 90-Day Supply & Split into 2 Payments</span>
+                <span class="arrow">→</span>
+              </a>
+              <a href="page2b-downsell2.html" class="btn-ghost">
+                <span class="icon">✕</span>
+                <span>No thanks, I’ll continue with only my original bundle</span>
+              </a>
+            </div>
+
+            <div class="mini-note">
+              Your total for the 3 additional bottles is still <strong>$99</strong>. This page simply gives you the
+              option to make it easier on your budget by splitting it into two equal charges of <strong>$49.50</strong>.
+            </div>
+          </div>
+
+          <div class="hero-product">
+            <div class="hero-product-pill-row">
+              <div class="hero-product-pill">💊 3 Extra GLP-1 Bottles</div>
+              <div class="hero-product-pill">📆 90-Day Coverage</div>
+            </div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0584/9540/2150/files/GLP-1_Secondary_Images_9df43eee-6358-467e-ad7b-429c07dd8aa4.png?v=1764187336"
+              alt="UNALTERED GLP-1 Support 3-bottle upgrade split payments"
+            />
+            <div class="mini-note">
+              Image for illustration only. Bottles and labels may vary slightly based on production runs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHY SPLIT PAYMENTS HELPS -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">📉</span>
+          Same 90-Day Plan, Less Upfront Pressure
+        </h2>
+        <p class="section-subtitle">
+          You are not downgrading your results—just how the payment shows up on your bank statement.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">👩‍👧</div>
+              <div class="card-title">Built for real-life budgets</div>
+            </div>
+            <ul class="checklist">
+              <li>Keep your full 3-bottle GLP-1 Support upgrade without a full $99 hit today.</li>
+              <li>Ideal if you have other New Year expenses hitting at the same time.</li>
+              <li>You still get all bottles in the same shipment.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📆</div>
+              <div class="card-title">No delays to your routine</div>
+            </div>
+            <ul class="checklist">
+              <li>Your extended supply ships together with your existing order.</li>
+              <li>No waiting for a “second shipment” when you’re almost out.</li>
+              <li>You stay consistent and avoid the stop-start cycle.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">💰</div>
+              <div class="card-title">Same discount, smarter structure</div>
+            </div>
+            <ul class="checklist">
+              <li>You still get 3 bottles for $99 total—no extra fees for splitting.</li>
+              <li>Equivalent to 58% off compared to paying full price later.</li>
+              <li>We simply bill $49.50 now and $49.50 on a later date shown at checkout.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🛡️</div>
+              <div class="card-title">Covered within your existing promise</div>
+            </div>
+            <ul class="checklist">
+              <li>Your purchase still sits under the same overall guarantee framework for this order.</li>
+              <li>We want your commitment to feel supported—not stressful.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY VIEW -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-title-icon">🧾</span>
+          Your Order with Split Payments
+        </h2>
+        <p class="section-subtitle">
+          Here’s a simple recap of what you’re locking in if you say “yes” to the split-payment offer.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📦</div>
+              <div class="card-title">Products in Your Shipment</div>
+            </div>
+            <div class="order-summary">
+              <div class="order-summary-row">
+                <span class="order-summary-label">UNALTERED GLP-1 Support</span>
+                <span class="order-summary-value">4 bottles total</span>
+              </div>
+              <div class="order-summary-row">
+                <span class="order-summary-label">UNALTERED Slim Tighten Tone</span>
+                <span class="order-summary-value">2 bottles (FREE)</span>
+              </div>
+              <div class="order-summary-total">
+                <div class="order-summary-row">
+                  <span class="order-summary-label">GLP-1 Support coverage</span>
+                  <span class="order-summary-value"><strong>~120 days</strong></span>
+                </div>
+              </div>
+              <div class="mini-note">
+                Your original bundle is unchanged—you are simply adding 3 more GLP-1 bottles in a friendlier payment structure.
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-color: var(--accent); box-shadow: 0 8px 20px rgba(239,70,132,0.12);">
+            <div class="card-header">
+              <div class="card-icon">💳</div>
+              <div class="card-title">How You’re Charged</div>
+            </div>
+            <div class="order-summary">
+              <div class="order-summary-row">
+                <span class="order-summary-label">Today</span>
+                <span class="order-summary-value">$49.50</span>
+              </div>
+              <div class="order-summary-row">
+                <span class="order-summary-label">Later scheduled date</span>
+                <span class="order-summary-value">$49.50</span>
+              </div>
+              <div class="order-summary-total">
+                <div class="order-summary-row">
+                  <span class="order-summary-label">Total for 3 additional bottles</span>
+                  <span class="order-summary-value"><strong>$99</strong></span>
+                </div>
+              </div>
+              <div class="mini-note">
+                The exact date of your second $49.50 charge will be clearly displayed on the final checkout page before you confirm your order.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top: 14px;">
+          <a href="page3-upsell2.html" class="btn-primary">
+            <span>Yes, Keep My 90-Day Supply & Split into 2 Payments</span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="page2b-downsell2.html" class="btn-ghost">
+            <span class="icon">✕</span>
+            <span>No, I’ll just keep my original bundle</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 UNALTERED LLC. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
