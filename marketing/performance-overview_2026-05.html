@@ -625,6 +625,123 @@
     .working-on { padding: 56px 24px; }
     .initiative-card { padding: 28px 24px; }
   }
+
+  /* ── JOURNEY FLOW ── */
+  .journey-wrapper {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px 32px 32px;
+    margin-bottom: 8px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+  }
+  .channel:nth-child(even) .journey-wrapper { background: var(--cream-dark); }
+
+  .journey-flow {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .journey-step {
+    flex: 1;
+    min-width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journey-arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+    color: rgba(58,80,104,0.35);
+    flex-shrink: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .journey-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--steel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+
+  .journey-icon-wrap svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--cream);
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .journey-step-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--steel);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .journey-step-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--charcoal);
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    padding: 0 4px;
+  }
+
+  .journey-step-desc {
+    font-size: 11.5px;
+    color: rgba(44,44,44,0.5);
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 6px;
+  }
+
+  .journey-rate-badge {
+    display: inline-block;
+    background: rgba(58,80,104,0.1);
+    color: var(--steel);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-top: 8px;
+    white-space: nowrap;
+  }
+
+  .journey-funnel-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(44,44,44,0.35);
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 900px) {
+    .journey-flow { flex-direction: column; align-items: center; gap: 16px; }
+    .journey-arrow { transform: rotate(90deg); padding-top: 0; }
+  }
+
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -1090,6 +1207,251 @@
       </div>
     </div>
   </div>
+
+  <!-- LEAD GENERATION SUBSECTION -->
+  <div class="subsection fade-up">
+    <div class="subsection-title">Lead Generation — Amazon Insert Funnel</div>
+
+    <!-- Customer Journey -->
+    <p class="tbl-sub" style="margin-bottom:18px;">Customer Journey</p>
+    <div class="journey-wrapper">
+      <div class="journey-flow">
+
+        <!-- Step 1: Amazon Order -->
+        <div class="journey-step">
+          <div class="journey-step-num">Step 01</div>
+          <div class="journey-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg>
+          </div>
+          <div class="journey-step-label">Amazon Order Placed</div>
+          <div class="journey-step-desc">Customer purchases an UNALTERED product on Amazon</div>
+        </div>
+
+        <div class="journey-arrow">›</div>
+
+        <!-- Step 2: QR Scan -->
+        <div class="journey-step">
+          <div class="journey-step-num">Step 02</div>
+          <div class="journey-icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h2M20 14v2M14 18h2M18 18h2M20 20v2"/></svg>
+          </div>
+          <div class="journey-step-label">QR Code Scanned</div>
+          <div class="journey-step-desc">Customer opens packaging &amp; scans product insert QR to claim "Free Weight Loss Plan"</div>
+          <span class="journey-rate-badge">avg. 6.7% of orders</span>
+        </div>
+
+        <div class="journey-arrow">›</div>
+
+        <!-- Step 3: Questionnaire -->
+        <div class="journey-step">
+          <div class="journey-step-num">Step 03</div>
+          <div class="journey-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+          </div>
+          <div class="journey-step-label">Fitness Questionnaire</div>
+          <div class="journey-step-desc">Customer fills out questionnaire on our website — answers are used to build personalised calorie targets</div>
+        </div>
+
+        <div class="journey-arrow">›</div>
+
+        <!-- Step 4: Email Capture -->
+        <div class="journey-step">
+          <div class="journey-step-num">Step 04</div>
+          <div class="journey-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div class="journey-step-label">Email Captured</div>
+          <div class="journey-step-desc">Customer submits email to "unlock their Free Weight Loss Plan"</div>
+          <span class="journey-rate-badge">avg. 50.3% of scans</span>
+        </div>
+
+        <div class="journey-arrow">›</div>
+
+        <!-- Step 5: App Download -->
+        <div class="journey-step">
+          <div class="journey-step-num">Step 05</div>
+          <div class="journey-icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/><path d="M9 7h6M9 11h4"/></svg>
+          </div>
+          <div class="journey-step-label">App Download</div>
+          <div class="journey-step-desc">Customer is directed to the App Store to download UNALTERED App and put their plan into action</div>
+          <span class="journey-rate-badge">avg. 27.7% of scans</span>
+        </div>
+
+      </div>
+      <div class="journey-funnel-note">Funnel: Amazon Order → Insert Scan → Email Capture → App Sign-Up &nbsp;·&nbsp; Rates shown are 6-month averages (Nov 2025 – Apr 2026)</div>
+    </div>
+
+    <!-- Insights -->
+    <p class="tbl-sub" style="margin-top:40px; margin-bottom:14px;">Summary Insights</p>
+    <div class="insights-grid" style="margin-bottom:40px;">
+      <div class="insight-card steel">
+        <span class="insight-number">01</span>
+        <p><strong>Scan rate is improving despite volume fluctuations.</strong> The share of Amazon orders that result in a QR scan grew from <strong>6.4% in November to 8.5% in April</strong>, even as order volumes swung significantly. The insert itself is gaining traction as customers become more familiar with the journey.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">02</span>
+        <p><strong>Email capture from scans is strong but softening.</strong> The email-capture-to-scan rate peaked at <strong>58.1% in January</strong> and has since declined to 42.8% in April. This warrants a review of the questionnaire's end CTA to re-sharpen the opt-in incentive.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">03</span>
+        <p><strong>App sign-up rate is the biggest drop-off point.</strong> On average, only <strong>27.7% of scans convert to an app sign-up</strong> — roughly half the email capture rate. The step from "email submitted" to "app downloaded" represents the largest attrition in the funnel and is the highest-leverage area for optimisation.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">04</span>
+        <p><strong>Absolute lead volume is recovering with order volume.</strong> Email captures bottomed at <strong>56 in February</strong> during the stockout period and rebounded to <strong>143 in April</strong> — the highest of any month. App sign-ups followed the same trajectory, reaching 78 in April, also a 6-month high.</p>
+      </div>
+    </div>
+
+    <!-- Raw Data Table -->
+    <p class="tbl-sub">Raw Data — Insert Funnel (Nov 2025 – Apr 2026)</p>
+    <div class="table-wrap" style="margin-bottom:40px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Nov 2025</th><th>Dec 2025</th><th>Jan 2026</th><th>Feb 2026</th><th>Mar 2026</th><th>Apr 2026</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Amazon Orders</td><td>4,106</td><td>3,218</td><td>2,625</td><td>1,380</td><td>3,042</td><td>3,912</td></tr>
+          <tr><td>Insert Scans (Sessions)</td><td>262</td><td>165</td><td>148</td><td>109</td><td>234</td><td>334</td></tr>
+          <tr><td>Scans / Orders %</td><td>6.4%</td><td>5.1%</td><td>5.6%</td><td>7.9%</td><td>7.7%</td><td>8.5%</td></tr>
+          <tr><td>Emails Captured</td><td>122</td><td>89</td><td>86</td><td>56</td><td>114</td><td>143</td></tr>
+          <tr><td>Emails / Scans %</td><td>46.6%</td><td>53.9%</td><td>58.1%</td><td>51.4%</td><td>48.7%</td><td>42.8%</td></tr>
+          <tr><td>App Sign-Ups</td><td>71</td><td>46</td><td>50</td><td>35</td><td>54</td><td>78</td></tr>
+          <tr><td>App Sign-Ups / Scans %</td><td>27.1%</td><td>27.9%</td><td>33.8%</td><td>32.1%</td><td>23.1%</td><td>23.4%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Charts -->
+    <p class="tbl-sub" style="margin-bottom:18px;">Charts</p>
+    <div class="charts-grid">
+      <div class="chart-card full-width">
+        <div class="chart-title">Insert Funnel Volume — Scans, Emails &amp; App Sign-Ups</div>
+        <div class="chart-subtitle">Absolute Counts · Nov 2025 – Apr 2026</div>
+        <div class="chart-container"><canvas id="leadVolumeChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Scan Rate vs. Amazon Orders</div>
+        <div class="chart-subtitle">% of Orders That Resulted in a Scan</div>
+        <div class="chart-container"><canvas id="leadScanRateChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Conversion Rates Through the Funnel</div>
+        <div class="chart-subtitle">Email Capture % &amp; App Sign-Up % of Scans</div>
+        <div class="chart-container"><canvas id="leadConvRateChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTOMATED EMAIL SEQUENCES SUBSECTION -->
+  <div class="subsection fade-up">
+    <div class="subsection-title">Automated Email Sequences</div>
+
+    <!-- INSIGHTS -->
+    <p class="tbl-sub" style="margin-bottom:14px;">Summary Insights</p>
+    <div class="insights-grid" style="margin-bottom:40px;">
+      <div class="insight-card steel">
+        <span class="insight-number">01</span>
+        <p><strong>Abandoned cart emails have never generated a completed order.</strong> Across all 12 months of data (May 2025 – Apr 2026), <strong>zero orders were recovered</strong> from abandoned cart sends. Despite reasonable open rates (up to 90% in April), clicks are sporadic and no send period has converted. The sequence triggers correctly but is failing to close.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">02</span>
+        <p><strong>Abandoned cart open rates are volatile and trending up.</strong> After a poor patch in August–October (13–23%), open rates have recovered sharply — reaching <strong>67% in March and 90% in April</strong>. This suggests deliverability and subject line performance have improved, but the email body or offer is not compelling enough to drive a click-through to purchase.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">03</span>
+        <p><strong>Refill Reminder #2 is outperforming Reminder #1 on conversions.</strong> Despite fewer sends, Refill Reminder #2 generated <strong>6 orders vs. 3 orders</strong> for Reminder #1 across March–April, with an Orders/Clicks rate of 100% in both months — meaning every person who clicked bought. The second reminder appears to reach customers at a higher-intent moment.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">04</span>
+        <p><strong>Refill Reminder revenue is growing quickly.</strong> Combined revenue from both reminders grew from <strong>$119 in March to $308 in April</strong> — a 159% increase in a single month. With the sequences only live since March 12, the revenue potential as the subscriber base grows is significant.</p>
+      </div>
+      <div class="insight-card steel">
+        <span class="insight-number">05</span>
+        <p><strong>Open-to-click rates on refill reminders are low.</strong> Reminder #1 sees only <strong>14–18% of openers clicking</strong>, and Reminder #2 fares slightly better at 31–33%. Given that 100% of those who do click go on to purchase, the biggest opportunity is converting more openers into clickers — stronger CTAs, clearer urgency, or a discount incentive could move the needle meaningfully.</p>
+      </div>
+    </div>
+
+    <!-- ABANDONED CART TABLE -->
+    <p class="tbl-sub">Abandoned Cart — Raw Data (May 2025 – Apr 2026)</p>
+    <div class="table-wrap" style="margin-bottom:8px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th><th>Sent</th><th>Opens</th><th>Clicks</th><th>Orders</th><th>Open Rate</th><th>Click Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>May 2025</td><td>8</td><td>5</td><td>0</td><td>0</td><td>57%</td><td>0%</td></tr>
+          <tr><td>Jun 2025</td><td>3</td><td>1</td><td>0</td><td>0</td><td>33%</td><td>0%</td></tr>
+          <tr><td>Jul 2025</td><td>17</td><td>10</td><td>2</td><td>0</td><td>53%</td><td>11.8%</td></tr>
+          <tr><td>Aug 2025</td><td>16</td><td>3</td><td>0</td><td>0</td><td>13%</td><td>0%</td></tr>
+          <tr><td>Sep 2025</td><td>31</td><td>8</td><td>1</td><td>0</td><td>23%</td><td>3.2%</td></tr>
+          <tr><td>Oct 2025</td><td>63</td><td>15</td><td>1</td><td>0</td><td>23%</td><td>3.3%</td></tr>
+          <tr><td>Nov 2025</td><td>59</td><td>18</td><td>1</td><td>0</td><td>29%</td><td>3.6%</td></tr>
+          <tr><td>Dec 2025</td><td>33</td><td>2</td><td>0</td><td>0</td><td>5%</td><td>0%</td></tr>
+          <tr><td>Jan 2026</td><td>22</td><td>11</td><td>0</td><td>0</td><td>48%</td><td>0%</td></tr>
+          <tr><td>Feb 2026</td><td>11</td><td>4</td><td>0</td><td>0</td><td>30%</td><td>0%</td></tr>
+          <tr><td>Mar 2026</td><td>17</td><td>12</td><td>2</td><td>0</td><td>67%</td><td>13.3%</td></tr>
+          <tr><td>Apr 2026</td><td>10</td><td>9</td><td>1</td><td>0</td><td>90%</td><td>10%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">* Zero orders recovered across all months. Sequence active since May 2025.</p>
+
+    <!-- REFILL REMINDERS TABLE -->
+    <p class="tbl-sub" style="margin-top:28px;">Refill Reminder #1 &amp; #2 — Raw Data (Since Mar 12 2026)</p>
+    <div class="table-wrap" style="margin-bottom:8px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Sequence</th><th>Month</th><th>Sends</th><th>Opens</th><th>Clicks</th><th>Orders</th><th>Revenue</th><th>Open Rate</th><th>Click / Open</th><th>Orders / Click</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Reminder #1</td><td>Mar 2026</td><td>70</td><td>11</td><td>2</td><td>1</td><td>$45</td><td>15.7%</td><td>18.2%</td><td>50%</td></tr>
+          <tr><td>Reminder #1</td><td>Apr 2026</td><td>191</td><td>14</td><td>2</td><td>2</td><td>$184</td><td>7.3%</td><td>14.3%</td><td>100%</td></tr>
+          <tr><td>Reminder #2</td><td>Mar 2026</td><td>45</td><td>6</td><td>2</td><td>2</td><td>$74</td><td>13.3%</td><td>33.3%</td><td>100%</td></tr>
+          <tr><td>Reminder #2</td><td>Apr 2026</td><td>159</td><td>13</td><td>4</td><td>4</td><td>$124</td><td>8.2%</td><td>30.8%</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">* Both sequences launched March 12, 2026. Revenue figures are directly attributed within MailChimp.</p>
+
+    <!-- CHARTS -->
+    <p class="tbl-sub" style="margin-top:28px; margin-bottom:18px;">Charts</p>
+    <div class="charts-grid">
+      <div class="chart-card full-width">
+        <div class="chart-title">Abandoned Cart — Open Rate &amp; Click Rate</div>
+        <div class="chart-subtitle">Monthly % · May 2025 – Apr 2026</div>
+        <div class="chart-container"><canvas id="cartEngChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Abandoned Cart — Sends &amp; Opens</div>
+        <div class="chart-subtitle">Volume by Month</div>
+        <div class="chart-container"><canvas id="cartVolumeChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Refill Reminders — Revenue Generated</div>
+        <div class="chart-subtitle">Reminder #1 vs. #2 · Mar – Apr 2026</div>
+        <div class="chart-container"><canvas id="refillRevChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Refill Reminders — Orders Generated</div>
+        <div class="chart-subtitle">Reminder #1 vs. #2 · Mar – Apr 2026</div>
+        <div class="chart-container"><canvas id="refillOrdersChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Refill Reminders — Funnel Rates</div>
+        <div class="chart-subtitle">Open Rate · Click/Open Rate · Orders/Click Rate</div>
+        <div class="chart-container tall"><canvas id="refillRatesChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -1525,6 +1887,109 @@ new Chart(document.getElementById('emailOrdersChart'), {
     }]
   },
   options: { ...baseOpts() }
+});
+
+// ─── LEAD GEN CHARTS ─────────────────────────────────────────────
+const MONTHS_LEAD = ['Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26'];
+
+new Chart(document.getElementById('leadVolumeChart'), {
+  type: 'bar',
+  data: {
+    labels: MONTHS_LEAD,
+    datasets: [
+      { label: 'Insert Scans', data: [262,165,148,109,234,334], backgroundColor: STEEL, borderRadius: 3 },
+      { label: 'Emails Captured', data: [122,89,86,56,114,143], backgroundColor: GOLD, borderRadius: 3 },
+      { label: 'App Sign-Ups', data: [71,46,50,35,54,78], backgroundColor: RUST, borderRadius: 3 },
+    ]
+  },
+  options: { ...baseOpts(true) }
+});
+
+new Chart(document.getElementById('leadScanRateChart'), {
+  type: 'line',
+  data: {
+    labels: MONTHS_LEAD,
+    datasets: [
+      { label: 'Scan Rate %', data: [6.4,5.1,5.6,7.9,7.7,8.5], borderColor: STEEL, backgroundColor: STEEL_L, fill: true, tension: 0.35, pointBackgroundColor: STEEL, pointRadius: 5, borderWidth: 2 },
+    ]
+  },
+  options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, ticks: { callback: v => v + '%' } } } }
+});
+
+new Chart(document.getElementById('leadConvRateChart'), {
+  type: 'line',
+  data: {
+    labels: MONTHS_LEAD,
+    datasets: [
+      { label: 'Emails / Scans %', data: [46.6,53.9,58.1,51.4,48.7,42.8], borderColor: GOLD, backgroundColor: GOLD_L, fill: false, tension: 0.35, pointBackgroundColor: GOLD, pointRadius: 5, borderWidth: 2 },
+      { label: 'App Sign-Ups / Scans %', data: [27.1,27.9,33.8,32.1,23.1,23.4], borderColor: RUST, backgroundColor: RUST_L, fill: false, tension: 0.35, pointBackgroundColor: RUST, pointRadius: 5, borderWidth: 2 },
+    ]
+  },
+  options: { ...baseOpts(true), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, ticks: { callback: v => v + '%' } } } }
+});
+
+// ─── AUTOMATED EMAIL SEQUENCES CHARTS ────────────────────────────
+const MONTHS_CART = ['May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26'];
+
+new Chart(document.getElementById('cartEngChart'), {
+  type: 'line',
+  data: {
+    labels: MONTHS_CART,
+    datasets: [
+      { label: 'Open Rate %', data: [57,33,53,13,23,23,29,5,48,30,67,90], borderColor: STEEL, backgroundColor: STEEL_L, fill: true, tension: 0.35, pointBackgroundColor: STEEL, pointRadius: 4, borderWidth: 2 },
+      { label: 'Click Rate %', data: [0,0,11.8,0,3.2,3.3,3.6,0,0,0,13.3,10], borderColor: GOLD, backgroundColor: 'transparent', fill: false, tension: 0.35, pointBackgroundColor: GOLD, pointRadius: 4, borderWidth: 2 },
+    ]
+  },
+  options: { ...baseOpts(true), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, ticks: { callback: v => v + '%' } } } }
+});
+
+new Chart(document.getElementById('cartVolumeChart'), {
+  type: 'bar',
+  data: {
+    labels: MONTHS_CART,
+    datasets: [
+      { label: 'Sent', data: [8,3,17,16,31,63,59,33,22,11,17,10], backgroundColor: STEEL_L, borderColor: STEEL, borderWidth: 1, borderRadius: 3 },
+      { label: 'Opens', data: [5,1,10,3,8,15,18,2,11,4,12,9], backgroundColor: STEEL, borderRadius: 3 },
+    ]
+  },
+  options: { ...baseOpts(true) }
+});
+
+new Chart(document.getElementById('refillRevChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Mar 2026', 'Apr 2026'],
+    datasets: [
+      { label: 'Reminder #1', data: [45, 184], backgroundColor: STEEL, borderRadius: 3 },
+      { label: 'Reminder #2', data: [74, 124], backgroundColor: GOLD, borderRadius: 3 },
+    ]
+  },
+  options: { ...baseOpts(true), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, ticks: { callback: v => '$' + v } } } }
+});
+
+new Chart(document.getElementById('refillOrdersChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Mar 2026', 'Apr 2026'],
+    datasets: [
+      { label: 'Reminder #1', data: [1, 2], backgroundColor: STEEL, borderRadius: 3 },
+      { label: 'Reminder #2', data: [2, 4], backgroundColor: GOLD, borderRadius: 3 },
+    ]
+  },
+  options: { ...baseOpts(true) }
+});
+
+new Chart(document.getElementById('refillRatesChart'), {
+  type: 'bar',
+  data: {
+    labels: ['R#1 Mar', 'R#1 Apr', 'R#2 Mar', 'R#2 Apr'],
+    datasets: [
+      { label: 'Open Rate %', data: [15.7, 7.3, 13.3, 8.2], backgroundColor: STEEL_L, borderColor: STEEL, borderWidth: 1, borderRadius: 3 },
+      { label: 'Click / Open %', data: [18.2, 14.3, 33.3, 30.8], backgroundColor: STEEL, borderRadius: 3 },
+      { label: 'Orders / Click %', data: [50, 100, 100, 100], backgroundColor: GOLD, borderRadius: 3 },
+    ]
+  },
+  options: { ...baseOpts(true), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, ticks: { callback: v => v + '%' }, max: 110 } } }
 });
 
 // ─── GOOGLE ADS CHARTS ───────────────────────────────────────────
